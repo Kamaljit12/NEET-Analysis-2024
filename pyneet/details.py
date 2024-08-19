@@ -9,7 +9,7 @@ result_df = resultDataFrame()
 
 def centerDetails():
     state_options = sorted(list(center_df['CENT_STATE'].unique()))
-    st.header("Exame Centers for eache City by each state")
+    st.header("Search Your Exame Center")
     col1, col2 = st.columns(2) 
     with col1:
         selected_state = st.selectbox("State Name", options=state_options)
