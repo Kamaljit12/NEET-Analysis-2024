@@ -1,7 +1,6 @@
 from pyneet.dataframe import centerDataFrame, resultDataFrame
 import streamlit as st
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 center_df = centerDataFrame()
 result_df = resultDataFrame()

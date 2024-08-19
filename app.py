@@ -6,7 +6,7 @@ from pyneet.plot import stateCentres
 from pyneet.dataframe import dataAnalysis
 from pyneet.plot import plotting
 import matplotlib.pyplot as plt
-# import seaborn as sns
+
 
 # app favicon logo
 
