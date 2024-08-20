@@ -1,7 +1,7 @@
 from pyneet.dataframe import centerDataFrame, resultDataFrame
 import streamlit as st
 import matplotlib.pyplot as plt
-import seaborn as sns
+
 
 center_df = centerDataFrame()
 result_df = resultDataFrame()
@@ -85,7 +85,6 @@ def plotting():
     st.pyplot(fig=fig)
 
 def stateCentres():
-
     # # Total numbers of exam centers for Bihar states
     col1, col2, col3 = st.columns(3)
     with col1:

@@ -1,10 +1,8 @@
 import streamlit as st
-import pandas as pd
 from pyneet.dataframe import centerDataFrame, resultDataFrame, sampleData
 from pyneet.details import centerDetails, searchCenter, stateSearch
-from pyneet.plot import stateCentres
+from pyneet.plot import stateCentres, plotting
 from pyneet.dataframe import dataAnalysis
-from pyneet.plot import plotting
 import matplotlib.pyplot as plt
 # import seaborn as sns
 
