@@ -23,7 +23,7 @@ st.set_page_config(
 col1, col2, col3, col4, col5  = st.columns(5)
 
 with col1:
-    st.title("NEET Exampe Analysis")
+    st.title("Find Exam Center")
 with col5:
     st.image('img/neet-ug.jpg', width=150)
 
@@ -37,6 +37,7 @@ options = ['Exam Centers', 'Exam Analysis', "Center Analysis",'Datasets']
 selected_option = st.sidebar.selectbox("Menu", options=options)
 
 if selected_option == 'Exam Centers':
+    st.
 
     ## fine exam centers using state and city
 
