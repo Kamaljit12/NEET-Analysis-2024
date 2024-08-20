@@ -45,6 +45,7 @@ def stateSearch():
     st.title("Select Your State")
 
     state_options = sorted(list(center_df['CENT_STATE'].unique()))
+    # city_options = sorted(list(center_df['CENT_CITY'].unique()))
 
     selected_state = st.selectbox("Your State Name", options=state_options)
 

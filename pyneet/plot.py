@@ -1,6 +1,7 @@
 from pyneet.dataframe import centerDataFrame, resultDataFrame
 import streamlit as st
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 center_df = centerDataFrame()
 result_df = resultDataFrame()
@@ -84,36 +85,6 @@ def plotting():
     st.pyplot(fig=fig)
 
 def stateCentres():
-    st.title("Select Your State")
-
-    state_options = sorted(list(center_df['CENT_STATE'].unique()))
-    # city_options = sorted(list(center_df['CENT_CITY'].unique()))
-
-    selected_state = st.selectbox("State Name", options=state_options)
-
-    if st.button("Get"):
-        for state in center_df['CENT_STATE']:
-            if state == selected_state:
-                result = center_df[center_df['CENT_STATE'] == selected_state]
-                st.dataframe(result['CENT_CITY'].value_counts().reset_index().head(10), hide_index=True)
-                break
-
-        else:
-            st.warning("State is not present !")
-
-    # # Total numbers of exam centers for Bihar states
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown("<h4>BIHAR</4>", unsafe_allow_html=True)
-        st.dataframe(center_df[center_df['CENT_STATE'] == 'BIHAR']['CENT_CITY'].value_counts(ascending=False).head(10))
-    with col2:
-        st.markdown("<h4>MAHARASHTRA</4>", unsafe_allow_html=True)
-        st.dataframe(center_df[center_df['CENT_STATE'] == 'MAHARASHTRA']['CENT_CITY'].value_counts(ascending=False).head(10))
-    with col3:
-        st.markdown("<h4>UTTAR PRADESH</4>", unsafe_allow_html=True)
-        st.dataframe(center_df[center_df['CENT_STATE'] == 'UTTAR PRADESH']['CENT_CITY'].value_counts(ascending=False).head(10))
-
-    def stateCentres():
 
     # # Total numbers of exam centers for Bihar states
     col1, col2, col3 = st.columns(3)
