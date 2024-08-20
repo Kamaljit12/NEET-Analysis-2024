@@ -9,7 +9,7 @@ result_df = resultDataFrame()
 
 def centerDetails():
     state_options = sorted(list(center_df['CENT_STATE'].unique()))
-    st.header("Search Your Exame Center")
+    st.header("Exame Centers for eache City by each state")
     col1, col2 = st.columns(2) 
     with col1:
         selected_state = st.selectbox("State Name", options=state_options)
@@ -30,10 +30,32 @@ def centerDetails():
                     st.dataframe(result[['CENT_CITY', 'CENT_NAME', 'CENTNO']], hide_index=True)
 
 
+def searchCenter():
+    st.header("Search Your Exam Center")
+    center_id_options = sorted(list(center_df['CENTNO']))
+    center_selected = st.selectbox("Center Number", center_id_options)
+    if center_selected in center_id_options:
+        result = center_df[center_df['CENTNO'] == center_selected]
+        if st.button("Get Center"):
+            st.dataframe(result[['CENT_STATE', 'CENT_CITY', 'CENT_NAME', 'CENTNO']], hide_index=True)
 
 
 
+def stateSearch():
+    st.title("Select Your State")
 
+    state_options = sorted(list(center_df['CENT_STATE'].unique()))
 
+    selected_state = st.selectbox("Your State Name", options=state_options)
+
+    if st.button("Get"):
+        for state in center_df['CENT_STATE']:
+            if state == selected_state:
+                result = center_df[center_df['CENT_STATE'] == selected_state]
+                st.dataframe(result['CENT_CITY'].value_counts().reset_index().head(10), hide_index=True)
+                break
+
+        else:
+            st.warning("State is not present !")
 
 

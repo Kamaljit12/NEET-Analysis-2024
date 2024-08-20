@@ -1,12 +1,12 @@
 import streamlit as st
 import pandas as pd
 from pyneet.dataframe import centerDataFrame, resultDataFrame, sampleData
-from pyneet.details import centerDetails
+from pyneet.details import centerDetails, searchCenter, stateSearch
 from pyneet.plot import stateCentres
 from pyneet.dataframe import dataAnalysis
 from pyneet.plot import plotting
 import matplotlib.pyplot as plt
-
+# import seaborn as sns
 
 # app favicon logo
 
@@ -41,14 +41,17 @@ if selected_option == 'Exam Centers':
     ## fine exam centers using state and city
 
     centerDetails()
+
+    searchCenter()
     # ========================================================================
-    dataAnalysis()
-    
+    stateSearch()
+
 elif selected_option == 'States':
     stateCentres()
 
 elif selected_option == 'Center Analysis':
     plotting()
     stateCentres()
+    dataAnalysis()
 else:
     sampleData()

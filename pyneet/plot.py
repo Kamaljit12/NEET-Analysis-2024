@@ -113,4 +113,18 @@ def stateCentres():
         st.markdown("<h4>UTTAR PRADESH</4>", unsafe_allow_html=True)
         st.dataframe(center_df[center_df['CENT_STATE'] == 'UTTAR PRADESH']['CENT_CITY'].value_counts(ascending=False).head(10))
 
+    def stateCentres():
+
+    # # Total numbers of exam centers for Bihar states
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown("<h4>BIHAR</4>", unsafe_allow_html=True)
+        st.dataframe(center_df[center_df['CENT_STATE'] == 'BIHAR']['CENT_CITY'].value_counts(ascending=False).head(10))
+    with col2:
+        st.markdown("<h4>MAHARASHTRA</4>", unsafe_allow_html=True)
+        st.dataframe(center_df[center_df['CENT_STATE'] == 'MAHARASHTRA']['CENT_CITY'].value_counts(ascending=False).head(10))
+    with col3:
+        st.markdown("<h4>UTTAR PRADESH</4>", unsafe_allow_html=True)
+        st.dataframe(center_df[center_df['CENT_STATE'] == 'UTTAR PRADESH']['CENT_CITY'].value_counts(ascending=False).head(10))
+
     
