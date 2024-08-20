@@ -37,10 +37,8 @@ options = ['Exam Centers', 'Exam Analysis', "Center Analysis",'Datasets']
 selected_option = st.sidebar.selectbox("Menu", options=options)
 
 if selected_option == 'Exam Centers':
-    st.
 
     ## fine exam centers using state and city
-
     centerDetails()
 
     searchCenter()
